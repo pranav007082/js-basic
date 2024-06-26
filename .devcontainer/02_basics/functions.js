@@ -23,3 +23,33 @@ function func(username){
 
 func("")
 func("pranav")
+
+function printthearray(...nums){//whenever there is ... ->u can consider it like array(it will return like array from that position)
+    return nums
+}
+
+function printarray(val1,...nums){
+    return nums
+}
+
+console.log(printthearray(200,300,400,500))
+console.log(printarray(200,300,400,500))
+
+const user = {
+    name: "Pranav",
+    age: 19
+}
+
+function fun(object){//passing object as parameter
+    console.log(`Username is ${object.name} and age is ${object.age}`)
+}
+
+fun(user)
+
+function funcc(getarray){
+        return getarray;
+}
+
+const arr = [1,2,3,4]
+for(let i=0;i<arr.length;i++)
+console.log(funcc(arr[i]))
