@@ -47,3 +47,8 @@ console.log(ch(3,4));
     console.log(firstname)
     console.log("5")
 })("pranav")
+
+//Nullish Coalescing Operator : ??
+let var1 = null ?? 10
+console.log(var1);
+//we usually use this when some value comes from database(eg:10) we will take it or we wiil take null value
