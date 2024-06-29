@@ -1,0 +1,36 @@
+//run this in vscode or w3schools
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color:white">
+    <ul class="lan">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addlan(lang){//function to add new element in list
+        const li = document.createElement('li');
+        li.innerHTML = `${lang}`//another way : li.appendChild(document.createTextNode(lang))
+        document.querySelector('.lan').appendChild(li);
+    }
+    addlan('cpp')
+    addlan('python');
+
+    //edit
+    const newlang = document.querySelector("li:nth-child(2)")
+    newlang.innerHTML = "C";
+    // another way:
+    //const newli = document.createElement("li")
+    //newli.textContent = "C";
+    //newlang.replaceWith(newli)
+
+    //remove:
+    const remlang = document.querySelector("li:nth-child(2)")
+    remlang.remove();
+    
+</script>
+</html>
