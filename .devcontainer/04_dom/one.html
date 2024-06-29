@@ -1,0 +1,45 @@
+//run this in vscode or w3schools
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color:white">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent)//gives all days in above format
+    console.log(parent.children);//gives html collection(4) .children acts like array
+    console.log(parent.children[1].innerHTML)//gives Tuesday
+
+    for(let i=0;i<parent.children.length;i++){
+    console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.color = "orange"
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+
+    console.log("NODES: ",parent.childNodes);//very intersting ,go through it by inspect ,it takes newline as text, here it will be NodeList(9)
+
+    const div = document.createElement('div')
+    console.log(div);
+    div.id = 1
+    div.className = "myclass"
+    div.setAttribute("title","mytitle")
+    div.innerText = "Pranav"
+
+    document.body.appendChild(div);
+
+</script>
+</html>
