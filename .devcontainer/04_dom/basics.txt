@@ -1,0 +1,13 @@
+main things in dom manipulation are :
+
+document.getElementById('pass id name')
+document.etElementByClassName('pass class name')
+document.querySelect('you can pass anything like id or classname')
+all above returns html collectors
+
+but this: document.querSelectAll('you can pass anything like id or classname') returns NodeList like array so if you want to access use indexes.
+you can also use forEach() to change innercontent of nodelist elements for Nodelist but not for html collectors
+
+in order to access multiple elements in html collectors we can convert it into array and use forEach()
+eg:const myarr = Array.from(html collector name)
+now you can forEach() in myarr
