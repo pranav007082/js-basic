@@ -7,18 +7,18 @@
 </head>
 <body>
     <h1>Pranav</h1>
-    <button id=""start>Start</button>
-    <button id=""stop>Stop</button>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
 </body>
 <script>
     //code to remove image if an image is selected
-    // document.getElementById('#images').addEventListener('click',function(e){
-    //     //e.stopPropogation() -> stops event bubbling
-    //     if(e.target.tagName === 'IMG'){
-    //     let res = e.target.parentNode
-    //     res.remove()
-    //     }
-    // })
+     document.getElementById('#images').addEventListener('click',function(e){
+         //e.stopPropogation() -> stops event bubbling
+         if(e.target.tagName === 'IMG'){
+         let res = e.target.parentNode
+         res.remove()
+         }
+     })
     
     //setTimeout() -> after some time task(function) will be executed(only once)
     //setInterval() -> repeteadly at every interval task will be executed.
@@ -27,26 +27,33 @@
         console.log("SAY HI!!");
     }
     
-    // setTimeout(sayhi,3000)
+    let intervalid=null;
+    
+    setTimeout(sayhi,3000)
     
     // //in the same way u can stop setTimeout() function if you use clearTimeout 
     // //suppose u have a button called stop such that if you click on it then settimeout() will not be executed
     // //before time mentioned in settimeout() function
     
-    // document.querySelector('#stop').addEventListener('click',function(){
-    //     clearTimeout(sayhi)
-    //     console.log("STOPPED!!");
-    // })
+     document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(sayhi)
+        console.log("STOPPED!!");
+    })
     
     //similarly for setInterval() as well -> clearInterval()
-    //if you want to start printing when you click start and stop when you click stop button code:
-    const ss = setInterval(sayhi,1000);
+    //if you want to start printing when you click start and stop when you click stop button; code:
     document.querySelector('#start').addEventListener('click',function(){
-        document.querySelector('h1').innerHTML = (sayhi,1000);
+    	if(!intervalid){
+        intervalid = setInterval(sayhi,1000);
+        document.querySelector('h1').innerHTML = 'SAY HI!!';
+    	}
     })
-
-    document.querySelector('#stop').addEventListener('click',function(){
-        clearInterval(ss);
+    
+  document.querySelector('#stop').addEventListener('click',function(){
+  		if(intervalid){
+        clearInterval(intervalid);
+        document.querySelector('h1').innerHTML = 'Pranav';
+    	}
     })
 
 
