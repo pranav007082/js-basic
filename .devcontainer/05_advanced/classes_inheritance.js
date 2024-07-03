@@ -29,3 +29,24 @@ teacher.addCourse()
 console.log(teacher === Teacher);
 console.log(teacher instanceof Teacher)
 //when you use static both child and parent can't access that static function
+
+/*Object.defineProperty(Math,"PI",{
+    writable: true,
+    enumerable: true
+})
+
+console.log(Object.getOwnPropertyDescriptor(Math,"PI"));*/
+//you cannot change pi value of math becuase it is a static property of math
+//in the same way u can change properties of user defined object(Teacher) ka attributes.
+
+const game = {
+    name: "coc",
+    year: 1990
+}
+
+for(let [key,value] of Object.entries(game)){//we can't directly iterate over object so we use entries
+    if(typeof value !== 'function'){
+        console.log(`${key}: ${value}`);
+    }
+}
+// if we modify name ka enumerate property as false then it will not get printed.
