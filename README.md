@@ -1,2 +1,2 @@
 # js-basic
-A code repo for js basics
+A code repo for js 
